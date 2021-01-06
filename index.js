@@ -7,9 +7,16 @@ const app = express();
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+const auth = (req, res, next)=>{
+    if(credentials.token!==req.cookies.auth_token) return res.sendStatus(401)
+    next();
+}
+
 const port = 3000
 const credentials = { login: 'api-test', pass: '1234', token: '32103012$30123910321faf1j901j$f19fj10ef' };
 const resources = {};
+
+
 
 app.post('/auth', (req, res)=>{
     if(credentials.login === req.body.login && credentials.pass === req.body.pass)
@@ -19,15 +26,15 @@ app.post('/auth', (req, res)=>{
     }
     return res.sendStatus(401);
 })
-app.get('/keys', (req, res)=>{
+app.get('/keys', auth, (req, res)=>{
     const keys = Object.keys(resources); 
     return res.json(req.query.filter?keys.filter(key=>key.match(new RegExp(req.query.filter, req.query.flags))):keys);
 })
 
 
 app.route('*')
+    .all(auth)
     .all((req, res, next)=>{
-        if(credentials.token!==req.cookies.auth_token) return res.sendStatus(401)
         req.resource=resources[req.originalUrl];
         req.issetResource = Object.keys(resources).includes(req.originalUrl);
         return next();
