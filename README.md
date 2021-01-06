@@ -23,6 +23,6 @@ Przy powodzeniu zwracany jest nowy obiekt.
 ## usunięcie zasobu
 Wystarczy wysłać żadanie DELETE na odpowiednią ścieżkę, w przypadku braku zasobu zwrócony zostanie kod 404 (Not Found), gdy zasób istnieje - zostanie usunięty i zwrócony zostanie kod 204 (No Content);
 ## listowanie zasobów
-Aby pobrać listę wszystkich kluczy (adresów URL), na których zapisane są dowolne zasoby należy wysłać żądanie GET na ścieżkę **/keys**
+Aby pobrać listę wszystkich kluczy (adresów URL) - na których zapisane są dowolne zasoby - należy wysłać żądanie GET na ścieżkę **/keys**
 Zasoby można dowolnie filtrować - wystarczy do żądania dodać parametr **filter** - jego wartością jest dowolny ciąg znaków reprezentujący wzór [wyrażenienia regularnego](https://www.w3schools.com/jsref/jsref_obj_regexp.asp). Dodatkowo można również dołączyć do żadania parametr **flags** - reprezentujący flagi, które zostaną dołączone do wyrażenia regularnego.
 
