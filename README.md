@@ -26,3 +26,16 @@ Wystarczy wysłać żadanie DELETE na odpowiednią ścieżkę, w przypadku braku
 Aby pobrać listę wszystkich kluczy (adresów URL) - na których zapisane są dowolne zasoby - należy wysłać żądanie GET na ścieżkę **/keys**
 Zasoby można dowolnie filtrować - wystarczy do żądania dodać parametr **filter** - jego wartością jest dowolny ciąg znaków reprezentujący wzór [wyrażenienia regularnego](https://www.w3schools.com/jsref/jsref_obj_regexp.asp). Dodatkowo można również dołączyć do żadania parametr **flags** - reprezentujący flagi, które zostaną dołączone do wyrażenia regularnego.
 
+
+## zrzuty ekranu (aby zobaczyć opis zdjęcia należy najechać na nie myszą)
+
+![alt text](sprawko/1.png "Logowanie do api i zwrócony token - jako httpOnly cookie")
+![alt text](sprawko/2.png "Zapisanie jakiegoś zasobu")
+![alt text](sprawko/3.png "Próba nadpisania zasobu przez POST - zakończona niepowodzeniem")
+![alt text](sprawko/4.png "Nadpisanie całkowite przez PUT")
+![alt text](sprawko/5.png "Wynik poprzedniej operacji")
+![alt text](sprawko/6.png "Nadpisanie - scalenie z poprzednim zasobem przez PATCH")
+![alt text](sprawko/9.png "Wyszukiwanie po kluczach - brak dopasowań, zwracana jest pusta tablica")
+![alt text](sprawko/10.png "Wyszukiwanie po kluczach - jest dopasowanie, zwracana jest tablica z naszym zasobem")
+![alt text](sprawko/7.png "Usunięcie zasobu")
+![alt text](sprawko/8.png "Brak zasobu po usunięciu")

@@ -6,13 +6,13 @@ const app = express();
 
 app.use(cookieParser());
 app.use(bodyParser.json());
-
+app.use(require('cors')({ origin: 'http://localhost:3000', credentials: true }))
 const auth = (req, res, next)=>{
     if(credentials.token!==req.cookies.auth_token) return res.sendStatus(401)
     next();
 }
 
-const port = 3000
+const port = 3001
 const credentials = { login: 'api-test', pass: '1234', token: '32103012$30123910321faf1j901j$f19fj10ef' };
 const resources = {};
 
